@@ -1,4 +1,5 @@
 import { CheckCircle, Users, Factory, Shield, Construction, DollarSign, CalendarCheck } from 'lucide-react'
+import Image from 'next/image'
 
 export default function About() {
   const stats = [
@@ -112,9 +113,11 @@ export default function About() {
             {/* Main Image */}
             <div className="relative mb-8">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-                <img 
+                <Image 
                   src="/images/hero-1.jpg" 
                   alt="Modern manufacturing facility showcasing advanced technology"
+                  width={1920} // Atur ukuran asli gambar (asli/ideal untuk layout fixed)
+                  height={400}
                   className="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent"></div>

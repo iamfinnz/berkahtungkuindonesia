@@ -1,5 +1,5 @@
 'use client'
-import { Wrench, Cpu, Package, Settings, Truck, Shield, ArrowRight, CheckCircle, Zap, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Wrench, Cpu, Package, Settings, Truck, Shield, ArrowRight, CheckCircle, Zap, ChevronLeft, ChevronRight, type LucideIcon } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 export default function Services() {
@@ -273,7 +273,7 @@ export default function Services() {
 // Service Card Component
 interface ServiceCardProps {
   service: {
-    icon: any;
+    icon: LucideIcon;
     title: string;
     description: string;
     features: string[];

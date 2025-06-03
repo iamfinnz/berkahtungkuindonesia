@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { ExternalLink, Calendar, MapPin, Building2, Award, ChevronRight, Filter } from 'lucide-react'
 
 export default function Projects() {
@@ -174,11 +175,11 @@ export default function Projects() {
                       {/* Image Section */}
                       <div className="relative overflow-hidden h-48 sm:h-56">
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-600/20"></div>
-                        <img 
+                        {/* <Image 
                           src={project.image} 
                           alt={project.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
+                        /> */}
                         
                         {/* Status Badge */}
                         <div className="absolute top-4 left-4">
@@ -265,7 +266,7 @@ export default function Projects() {
                     {/* Image Section */}
                     <div className="relative overflow-hidden h-48 sm:h-56">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-600/20"></div>
-                      <img 
+                      <Image 
                         src={project.image} 
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
