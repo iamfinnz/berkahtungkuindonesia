@@ -113,7 +113,7 @@ export default function About() {
             <div className="relative mb-8">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
                 <img 
-                  src="" 
+                  src="/images/hero-1.jpg" 
                   alt="Modern manufacturing facility showcasing advanced technology"
                   className="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 />

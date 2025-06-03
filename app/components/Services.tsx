@@ -5,8 +5,8 @@ import { useState, useEffect, useRef } from 'react'
 export default function Services() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const scrollContainerRef = useRef(null)
-  const autoPlayRef = useRef(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
 
   const services = [
     {
@@ -66,17 +66,17 @@ export default function Services() {
 
   // Scroll to specific slide for mobile with smooth transition
   useEffect(() => {
-    if (window.innerWidth < 768 && scrollContainerRef.current) {
+    if (typeof window !== 'undefined' && window.innerWidth < 768 && scrollContainerRef.current) {
       const container = scrollContainerRef.current
       const cardWidth = container.children[0]?.children[currentSlide]?.offsetWidth || 0
       const gap = 24
       const scrollPosition = currentSlide * (cardWidth + gap)
       
       // Use requestAnimationFrame for smoother scrolling
-      const smoothScroll = (start, end, duration) => {
+      const smoothScroll = (start: number, end: number, duration: number) => {
         const startTime = performance.now()
         
-        const animate = (currentTime) => {
+        const animate = (currentTime: number) => {
           const elapsed = currentTime - startTime
           const progress = Math.min(elapsed / duration, 1)
           
@@ -113,7 +113,7 @@ export default function Services() {
 
   // Handle manual scroll on mobile
   const handleScroll = () => {
-    if (scrollContainerRef.current && window.innerWidth < 768) {
+    if (scrollContainerRef.current && typeof window !== 'undefined' && window.innerWidth < 768) {
       const scrollLeft = scrollContainerRef.current.scrollLeft
       const cardWidth = scrollContainerRef.current.children[0]?.children[0]?.offsetWidth || 0
       const gap = 24
@@ -271,7 +271,18 @@ export default function Services() {
 }
 
 // Service Card Component
-function ServiceCard({ service, index, isMobile = false }) {
+interface ServiceCardProps {
+  service: {
+    icon: any;
+    title: string;
+    description: string;
+    features: string[];
+  };
+  index: number;
+  isMobile?: boolean;
+}
+
+function ServiceCard({ service, index, isMobile = false }: ServiceCardProps) {
   const hoverScale = isMobile ? 'hover:scale-[1.02]' : 'hover:scale-105'
   
   return (
