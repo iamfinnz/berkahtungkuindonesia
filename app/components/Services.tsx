@@ -68,7 +68,8 @@ export default function Services() {
   useEffect(() => {
     if (typeof window !== 'undefined' && window.innerWidth < 768 && scrollContainerRef.current) {
       const container = scrollContainerRef.current
-      const cardWidth = container.children[0]?.children[currentSlide]?.offsetWidth || 0
+      const cardElement = container.children[0]?.children[currentSlide] as HTMLElement
+      const cardWidth = cardElement?.offsetWidth || 0
       const gap = 24
       const scrollPosition = currentSlide * (cardWidth + gap)
       
@@ -115,7 +116,8 @@ export default function Services() {
   const handleScroll = () => {
     if (scrollContainerRef.current && typeof window !== 'undefined' && window.innerWidth < 768) {
       const scrollLeft = scrollContainerRef.current.scrollLeft
-      const cardWidth = scrollContainerRef.current.children[0]?.children[0]?.offsetWidth || 0
+      const cardElement = scrollContainerRef.current.children[0]?.children[0] as HTMLElement
+      const cardWidth = cardElement?.offsetWidth || 0
       const gap = 24
       const newSlide = Math.round(scrollLeft / (cardWidth + gap))
       setCurrentSlide(Math.max(0, Math.min(newSlide, maxSlides)))
