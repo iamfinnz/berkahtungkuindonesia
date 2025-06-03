@@ -1,5 +1,5 @@
 'use client'
-import { Wrench, Cpu, Package, Settings, Truck, Shield, ArrowRight, CheckCircle, Star, Zap, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Wrench, Cpu, Package, Settings, Truck, Shield, ArrowRight, CheckCircle, Zap, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 export default function Services() {

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Plus, Minus, MessageCircle, Phone, Mail } from 'lucide-react'
+import { Plus, Minus, MessageCircle} from 'lucide-react'
 
 export default function FAQ() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0)

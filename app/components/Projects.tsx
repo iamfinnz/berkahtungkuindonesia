@@ -166,7 +166,7 @@ export default function Projects() {
               // Single project - centered
               <div className="flex justify-center">
                 <div className="w-full max-w-md">
-                  {filteredProjects.map((project, index) => (
+                  {filteredProjects.map((project) => (
                     <div 
                       key={project.id}
                       className="group bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl border border-white/20 transition-all duration-500 hover:transform hover:scale-[1.02] overflow-hidden"
